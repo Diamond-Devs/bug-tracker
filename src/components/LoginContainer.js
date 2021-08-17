@@ -20,7 +20,7 @@ function LoginContainer({ addStyles }) {
     <LoginUI>
       <Logo width={24.4} height={20.6} mb={addStyles.mb} />
       <RegularText size={1.75} mb={addStyles.mb} ds={addStyles.ds} ts>
-        Dimon Devs Bug Tracker
+        Diamond Devs Bug Tracker
       </RegularText>
       <RegularInput
         br={addStyles.br}
