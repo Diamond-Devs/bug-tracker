@@ -15,14 +15,15 @@ const DiamondButton = styled(CommonContainer)`
   height: ${({ height }) => height}vh;
   border-radius: 24px;
   border: solid ${mainColor} 1px;
-  :active {
-    background: black;
+  :hover {
+    background: black; //make this darker purple
     color: white;
+    cursor: pointer;
   }
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
-function Button({ ds, mb, height, width, children, invert }) {
+function Button({ ds, mb, height, width, children, invert, onClick }) {
   return (
     <DiamondButton
       ds={ds}
@@ -30,6 +31,7 @@ function Button({ ds, mb, height, width, children, invert }) {
       height={height}
       width={width}
       invert={invert}
+      onClick={onClick}
     >
       <RegularText>{children}</RegularText>
     </DiamondButton>

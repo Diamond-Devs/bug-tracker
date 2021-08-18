@@ -1,5 +1,5 @@
 import React from "react";
-import LoginContainer from "./components/LoginContainer";
+import Login from "./components/Login";
 import styled from "styled-components";
 
 const AppView = styled.div`
@@ -17,7 +17,7 @@ const inputBorderRadius = "12px;";
 function App() {
   return (
     <AppView>
-      <LoginContainer
+      <Login
         addStyles={{ mb: bottomMargin, ds: dropShadow, br: inputBorderRadius }}
       />
     </AppView>
