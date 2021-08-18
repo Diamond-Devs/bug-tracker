@@ -4,13 +4,13 @@ This is a bug tracker for our web development collective, Diamond Devs. The Fron
 
 TECHNOLOGIES USED:
 
-React
+-React
 
-styled-components
+-styled-components
 
-node.js
+-node.js
 
-MongoDB
+-MongoDB
 
 
 # What we've done so far (VISUALIZATION)
@@ -19,15 +19,15 @@ This is a new project, but we are progressing relatively quickly. The login page
 
 WHAT WE AIM TO ACCOMPLISH:
 
-Dashboard
+-Dashboard, Authentication, Ticket System
 
-CRUD features
+-CRUD features typical for an enterprise bug tracker application
 
-To teach and observe each other's strengths (we are both good at the other's weakness)
+-To teach and observe each other's strengths (we are both good at the other's weakness)
 
-Beautiful animations
+-Beautiful animations
 
-A new UI Library (I want to make a small UI library for Diamond Devs to use in the future)
+-A new UI Library (I want to make a small UI library for Diamond Devs to use in the future)
 
 ![lLIG1ttZaF](https://user-images.githubusercontent.com/76098411/129896031-9f36a886-2aff-4562-b066-e12587a990ae.gif)
 
