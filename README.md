@@ -4,9 +4,19 @@ This is a bug tracker for our web development collective, Diamond Devs. The Fron
 
 TECHNOLOGIES USED:
 
+FRONT END
+
 -React
 
 -styled-components
+
+-Redux
+
+-framer-motion
+
+-Diamond Devs' Custom UI Library Experiment
+
+BACK END
 
 -node.js
 
