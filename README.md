@@ -1,6 +1,6 @@
 # Diamond Devs Bug Tracker
 
-This is a bug tracker for our web development collective, Diamond Devs. The Front End will be done by fromjaytoz and the back end will be done by rileydlynch. 
+This is a bug tracker for our web development collective, Diamond Devs.
 
 TECHNOLOGIES USED:
 
@@ -18,9 +18,9 @@ FRONT END
 
 BACK END
 
--node.js
+-Node.js
 
--MongoDB
+-MySQL
 
 
 # What we've done so far (VISUALIZATION)
