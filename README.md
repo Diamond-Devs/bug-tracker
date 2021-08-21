@@ -22,6 +22,13 @@ BACK END
 
 -MySQL
 
+TESTING
+
+-jest
+-React-Testing-Library
+-Cypress
+-Enzyme
+
 
 # What we've done so far (VISUALIZATION)
 
