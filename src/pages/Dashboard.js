@@ -14,10 +14,9 @@ const DashboardDiv = styled.div`
 `;
 
 function Dashboard() {
-  const [slideIsShown, setSlideIsShown] = useState(false);
   return (
     <DashboardDiv>
-      <Navbar menu={slideIsShown} toggleMenu={setSlideIsShown} />
+      <Navbar />
     </DashboardDiv>
   );
 }

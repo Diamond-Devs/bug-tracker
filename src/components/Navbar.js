@@ -11,6 +11,7 @@ import XButton from "../assets/XButton.png";
 import Icon from "./Icon";
 import SearchBar from "./SearchBar";
 import Bubble from "./Bubble";
+import ToggleMenu from "./ToggleMenu";
 
 const NavbarDiv = styled.div`
   grid-area: nav;
@@ -31,13 +32,10 @@ function Navbar({ menu, toggleMenu }) {
       <Icon src={User} alt="user">
         <Bubble></Bubble>
       </Icon>
-      <div onClick={() => toggleMenu(!menu)}>
-        {menu ? (
-          <Icon src={XButton} alt="x button" mr={3} />
-        ) : (
-          <Icon src={Hamburger} alt="hamburger" mr={3} />
-        )}
-      </div>
+      <ToggleMenu
+        show={[Hamburger, "hamburger icon"]}
+        hide={[XButton, "x button icon"]}
+      />
     </NavbarDiv>
   );
 }
