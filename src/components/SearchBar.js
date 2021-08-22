@@ -12,13 +12,19 @@ const InputText = styled.input`
   outline: none;
   border: none;
   color: #454e9e;
+  margin-right: ${({ mr }) => mr}vw;
+  margin-left: ${({ ml }) => ml}vw;
+  @media (min-width: 609px) {
+    margin-left: ${({ ml }) => ml * 0.5}vh;
+    margin-right: ${({ mr }) => mr * 0.5}vh;
+  }
 `;
 
 const SearchIcon = styled(Icon)``;
 
-function SearchBar() {
+function SearchBar({ ml, mr }) {
   return (
-    <Input ml={3}>
+    <Input ml={ml} mr={mr}>
       <SearchIcon src={Search} ml={3} />
       <InputText />
       <SearchIcon src={Cancel} mr={3} />

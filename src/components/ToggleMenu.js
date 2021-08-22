@@ -1,16 +1,26 @@
 import React, { useState } from "react";
 import Icon from "./Icon";
+import styled from "styled-components";
 
-function ToggleMenu({ hide, show }) {
+const ToggleMenuDiv = styled.div`
+  margin-right: ${({ mr }) => mr}vw;
+  margin-left: ${({ ml }) => ml}vw;
+  @media (min-width: 609px) {
+    margin-left: ${({ ml }) => ml * 0.5}vh;
+    margin-right: ${({ mr }) => mr * 0.5}vh;
+  }
+`;
+
+function ToggleMenu({ hide, show, mr }) {
   const [toggled, setToggled] = useState(false);
   return (
-    <div onClick={() => setToggled(!toggled)}>
+    <ToggleMenuDiv onClick={() => setToggled(!toggled)} mr={mr}>
       {toggled ? (
-        <Icon src={hide[0]} alt={hide[1]} mr={3} />
+        <Icon src={hide[0]} alt={hide[1]} />
       ) : (
-        <Icon src={show[0]} alt={show[1]} mr={3} />
+        <Icon src={show[0]} alt={show[1]} />
       )}
-    </div>
+    </ToggleMenuDiv>
   );
 }
 
