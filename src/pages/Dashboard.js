@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import styled from "styled-components";
 
@@ -14,9 +14,10 @@ const DashboardDiv = styled.div`
 `;
 
 function Dashboard() {
+  const [slideIsShown, setSlideIsShown] = useState(false);
   return (
     <DashboardDiv>
-      <Navbar />
+      <Navbar menu={slideIsShown} toggleMenu={setSlideIsShown} />
     </DashboardDiv>
   );
 }

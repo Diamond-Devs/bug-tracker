@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Hamburger from "../assets/HamburgerIcon.png";
 import User from "../assets/UserIcon.png";
 import Pencil from "../assets/PencilIcon.png";
+import XButton from "../assets/XButton.png";
 
 //Components
 import Icon from "./Icon";
@@ -22,7 +23,7 @@ const NavbarDiv = styled.div`
   justify-content: space-around;
 `;
 
-function Navbar() {
+function Navbar({ menu, toggleMenu }) {
   return (
     <NavbarDiv>
       <SearchBar />
@@ -30,7 +31,13 @@ function Navbar() {
       <Icon src={User} alt="user">
         <Bubble></Bubble>
       </Icon>
-      <Icon src={Hamburger} alt="hamburger" mr={3} />
+      <div onClick={() => toggleMenu(!menu)}>
+        {menu ? (
+          <Icon src={XButton} alt="x button" mr={3} />
+        ) : (
+          <Icon src={Hamburger} alt="hamburger" mr={3} />
+        )}
+      </div>
     </NavbarDiv>
   );
 }
