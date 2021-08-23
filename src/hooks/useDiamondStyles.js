@@ -3,7 +3,7 @@ export const useDiamondStyles = (props) => {
   for (let attribute in props) {
     const appendVhorVw = (attribute) => {
       const vhValues = ["mb", "height"];
-      const vwValues = ["size", "width"];
+      const vwValues = ["size", "width", "ml", "mr", "mt"];
       const varToString = (varObj) => Object.keys(varObj)[0];
       const vh = vhValues.find((query) => query == attribute);
       const vw = vwValues.find((query) => query == attribute);

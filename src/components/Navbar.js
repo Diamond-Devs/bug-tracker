@@ -7,10 +7,10 @@ const NavbarDiv = styled.div`
   align-items: center;
   background: #fffdfd;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: ${({ width }) => width}vw;
+  width: ${({ width }) => width};
   height: 9.4vh;
   justify-content: space-around;
-  margin-left: ${({ ml }) => ml}vw;
+  margin-left: ${({ ml }) => ml};
 `;
 
 function Navbar({ icons, area, width, ml }) {

@@ -12,10 +12,10 @@ const AppView = styled.div``;
 function App() {
   return (
     <AppView>
-      {/* <Dashboard /> */}
-      <Login
+      <Dashboard />
+      {/* <Login
         addStyles={{ mb: bottomMargin, ds: dropShadow, br: inputBorderRadius }}
-      />
+      /> */}
     </AppView>
   );
 }

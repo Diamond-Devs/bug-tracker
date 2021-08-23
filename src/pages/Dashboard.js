@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import styled from "styled-components";
+import { useDiamondStyles } from "../hooks/useDiamondStyles";
 
 //Assets
 import Hamburger from "../assets/HamburgerIcon.png";
 import User from "../assets/UserIcon.png";
 import Pencil from "../assets/PencilIcon.png";
 import XButton from "../assets/XButton.png";
+import Home from "../assets/HomeIcon.png";
 
 //Components
 import Icon from "../components/Icon";
@@ -21,24 +23,48 @@ const DashboardDiv = styled.div`
   display: grid;
   width: 100vw;
   height: 100vh;
-  background-color: yellow;
+
   justify-content: center;
   grid-template-areas:
-    "nav nav nav nav nav"
-    ". body body body .";
+    "nav"
+    "body";
   grid-template-rows: 10vh auto;
+`;
+
+const MenuRowIcon = styled.img`
+  margin-left: 6.28vw;
+  @media (min-width: 427px) {
+    width: 44px;
+    height: 44px;
+  }
+  @media (min-width: 579px) {
+    width: 52px;
+    height: 52px;
+  }
+  @media (min-width: 807px) {
+    width: 56px;
+    height: 56px;
+  }
+  @media (min-width: 962px) {
+    width: 64px;
+    height: 64px;
+  }
+  @media (min-width: 1100px) {
+    width: 104px;
+    height: 104px;
+  }
 `;
 
 function Dashboard() {
   return (
     <DashboardDiv>
       <Navbar
-        width={100}
+        {...useDiamondStyles({ width: 100 })}
         area={"nav"}
         icons={[
-          <Icon src={Pencil} alt="pencil"></Icon>,
-          <SearchBar mr={3} />,
-          <Icon src={User} alt="user">
+          <Icon src={Pencil} alt="pencil icon"></Icon>,
+          <SearchBar {...useDiamondStyles({ mr: 3, ml: 3 })} />,
+          <Icon src={User} alt="user icon">
             <Bubble></Bubble>
           </Icon>,
           <ToggleMenu
@@ -49,18 +75,30 @@ function Dashboard() {
         ]}
       />
       <Screen area="body">
-        <MenuRow ml={8} height={20} width={80}>
-          <RegularText size={5}>dsadsaekwqpew</RegularText>
-        </MenuRow>
-        <MenuRow ml={12} height={70} width={75}>
-          <Icon src={User}>
-            <Bubble></Bubble>
-          </Icon>
-          <RegularText ml={5} size={3}>
-            I went there and I ran away Help me!
+        <MenuRow
+          {...useDiamondStyles({ height: 12.86, width: 100, mt: "10px" })}
+        >
+          <MenuRowIcon
+            src={Home}
+            alt="home icon"
+            {...useDiamondStyles({ ml: 6.28 })}
+          ></MenuRowIcon>
+          <RegularText {...useDiamondStyles({ ml: 3.68, size: 4.44 })}>
+            Dashboard Home
           </RegularText>
         </MenuRow>
-        <RegularText>weqw</RegularText>
+        <MenuRow
+          {...useDiamondStyles({ height: 12.86, width: 100, mt: "8px" })}
+        >
+          <MenuRowIcon
+            src={Home}
+            alt="home icon"
+            {...useDiamondStyles({ ml: 6.28 })}
+          ></MenuRowIcon>
+          <RegularText {...useDiamondStyles({ ml: 3.68, size: 4.44 })}>
+            Dashboard Home
+          </RegularText>
+        </MenuRow>
       </Screen>
     </DashboardDiv>
   );

@@ -4,17 +4,15 @@ import styled from "styled-components";
 const MenuRowContainer = styled.div`
   display: flex;
   align-items: center;
-
-  flex-direction: ${({ vertical }) => vertical && "column"};
-  background-color: red;
-  width: ${({ width }) => width}vw;
-  height: ${({ height }) => height}vh;
-  margin-left: ${({ ml }) => ml}%;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  margin-left: ${({ ml }) => ml};
+  margin-top: ${({ mt }) => mt};
 `;
 
-function MenuRow({ height, width, ml, children, vertical }) {
+function MenuRow({ height, width, ml, mt, children }) {
   return (
-    <MenuRowContainer height={height} width={width} ml={ml} vertical={vertical}>
+    <MenuRowContainer height={height} width={width} ml={ml} mt={mt}>
       {children}
     </MenuRowContainer>
   );
