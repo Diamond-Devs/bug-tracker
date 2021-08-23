@@ -32,7 +32,7 @@ const DiamondInput = styled.input`
 
 function RegularInput({ mb, br, ds, placeholder }) {
   return (
-    <CommonContainer mb={mb} ds={ds}>
+    <CommonContainer mb={mb} ds={ds} mb={mb}>
       <DiamondInput br={br} type="text" placeholder={placeholder} />
     </CommonContainer>
   );

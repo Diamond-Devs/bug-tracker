@@ -4,8 +4,9 @@ import { CommonContainer } from "../styled/commonStyles";
 
 const RegularTextContent = styled.p`
   text-align: center;
-  margin-bottom: ${({ mb }) => mb};
-  font-size: ${({ size }) => size}em;
+  margin-bottom: ${({ mb, customMb }) => customMb || mb + "vh"};
+  margin-left: ${({ ml }) => ml};
+  font-size: ${({ size }) => (typeof size == "string" ? size : size + "vw")};
   filter: ${({ ds }) => ds};
   ${({ ts }) =>
     ts &&
@@ -14,10 +15,17 @@ const RegularTextContent = styled.p`
     `}
 `;
 
-function RegularText({ size, children, mb, ds, ts }) {
+function RegularText({ size, children, mb, ds, ts, customSize, ml }) {
   return (
-    <CommonContainer ds={ds}>
-      <RegularTextContent size={size} mb={mb} ds={ds} ts={ts}>
+    <CommonContainer ds={ds} mb={mb}>
+      <RegularTextContent
+        size={size}
+        mb={mb}
+        ds={ds}
+        ts={ts}
+        customSize={customSize}
+        ml={ml}
+      >
         {children}
       </RegularTextContent>
     </CommonContainer>

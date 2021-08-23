@@ -11,8 +11,8 @@ const DiamondButton = styled(CommonContainer)`
   width: 38.4vh;
   height: 55px;
   height: 8vh;
-  width: ${({ width }) => width}vh;
-  height: ${({ height }) => height}vh;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   border-radius: 24px;
   border: solid ${mainColor} 1px;
   :hover {

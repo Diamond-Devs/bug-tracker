@@ -4,6 +4,8 @@ export const CommonContainer = styled.div`
   margin-bottom: ${({ mb }) => mb};
   filter: ${({ ds }) => ds};
   border-radius: ${({ br }) => br};
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   max-width: 100%;
   display: flex;
   ${({ invert }) =>

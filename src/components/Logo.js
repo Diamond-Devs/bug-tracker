@@ -8,8 +8,8 @@ const LogoImage = styled.img`
   width: 12.2vw;
   height: 10.3vh;
   margin-bottom: 0px;
-  width: ${({ width }) => width}vh;
-  height: ${({ height }) => height}vh;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
 `;
 
 function Logo({ height, width, mb }) {

@@ -10,11 +10,13 @@ const IconDiv = styled.div`
   }
 `;
 
+const IconImg = styled.img``;
+
 function Icon({ src, alt, mr, ml, children }) {
   return (
     <IconDiv mr={mr} ml={ml}>
       {children}
-      <img src={src} alt={alt} />
+      <IconImg src={src} alt={alt} />
     </IconDiv>
   );
 }

@@ -27,7 +27,7 @@ const LoginOrSignUp = styled.div`
 function Login({ addStyles }) {
   const [isSignUp, setIsSignUp] = useState(false);
   const titleStyle = useDiamondStyles({
-    size: 1.75,
+    size: "1.75em",
     mb: addStyles.mb,
     ds: addStyles.ds,
     ts: true,
@@ -37,12 +37,22 @@ function Login({ addStyles }) {
     ds: addStyles.ds,
     br: addStyles.br,
   });
+
+  const logoDefault = useDiamondStyles({
+    width: 54.4,
+    height: 20.6,
+  });
+  const logoSignUp = useDiamondStyles({
+    width: 54.4,
+    height: 26.6,
+  });
+
   return (
     <LoginView>
       <LoginOrSignUp>
         {isSignUp || (
           <>
-            <Logo width={24.4} height={20.6} mb={addStyles.mb} />
+            <Logo {...logoDefault} mb={addStyles.mb} />
             <RegularText {...titleStyle}>
               Diamond Delivery Issue Tracker
             </RegularText>
@@ -58,7 +68,7 @@ function Login({ addStyles }) {
         )}
         {isSignUp && (
           <>
-            <Logo width={30.4} height={26.6} mb={addStyles.mb} />
+            <Logo {...logoSignUp} mb={addStyles.mb} />
             <RegularInput {...defaultStyle} placeholder="Create username" />
             <RegularInput {...defaultStyle} placeholder="Create Password" />
             <Button {...defaultStyle} invert>
