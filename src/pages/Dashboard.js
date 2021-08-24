@@ -31,29 +31,28 @@ const DashboardDiv = styled.div`
   grid-template-rows: 10vh auto;
 `;
 
-const MenuRowIcon = styled.img`
-  margin-left: 6.28vw;
-  @media (min-width: 427px) {
-    width: 44px;
-    height: 44px;
-  }
-  @media (min-width: 579px) {
-    width: 52px;
-    height: 52px;
-  }
-  @media (min-width: 807px) {
-    width: 56px;
-    height: 56px;
-  }
-  @media (min-width: 962px) {
-    width: 64px;
-    height: 64px;
-  }
-  @media (min-width: 1100px) {
-    width: 104px;
-    height: 104px;
-  }
-`;
+// const MenuRowIcon = styled.img`
+//   margin-left: 6.28vw;
+//   @media (min-width: 427px) {
+//     width: 44px;
+//     height: 44px;
+//   }
+//   @media (min-width: 579px) {
+//     width: 52px;
+//     height: 52px;
+//   }
+//   @media (min-width: 807px) {
+//     width: 56px;
+//     height: 56px;
+//   }
+//   @media (min-width: 962px) {
+//     width: 64px;
+//     height: 64px;
+//   }
+//   @media (min-width: 1100px) {
+//     display: none;
+//   }
+// `;
 
 function Dashboard() {
   return (
@@ -78,24 +77,31 @@ function Dashboard() {
         <MenuRow
           {...useDiamondStyles({ height: 12.86, width: 100, mt: "10px" })}
         >
-          <MenuRowIcon
+          <Icon
             src={Home}
             alt="home icon"
-            {...useDiamondStyles({ ml: 6.28 })}
-          ></MenuRowIcon>
-          <RegularText {...useDiamondStyles({ ml: 3.68, size: 4.44 })}>
+            {...useDiamondStyles({ ml: 6.28, fg: 1, d: "flex" })}
+          ></Icon>
+          <RegularText
+            {...useDiamondStyles({
+              ml: 3.68,
+              size: [[20, 2], 3],
+              fs: 3,
+              d: "flex",
+            })}
+          >
             Dashboard Home
           </RegularText>
         </MenuRow>
         <MenuRow
           {...useDiamondStyles({ height: 12.86, width: 100, mt: "8px" })}
         >
-          <MenuRowIcon
+          <Icon
             src={Home}
             alt="home icon"
             {...useDiamondStyles({ ml: 6.28 })}
-          ></MenuRowIcon>
-          <RegularText {...useDiamondStyles({ ml: 3.68, size: 4.44 })}>
+          ></Icon>
+          <RegularText {...useDiamondStyles({ ml: 3.68, size: "5em" })}>
             Dashboard Home
           </RegularText>
         </MenuRow>

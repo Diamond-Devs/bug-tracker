@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const CommonContainer = styled.div`
+  display:${({ d }) => d}
   margin-bottom: ${({ mb }) => mb};
   filter: ${({ ds }) => ds};
   border-radius: ${({ br }) => br};

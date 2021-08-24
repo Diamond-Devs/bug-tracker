@@ -6,13 +6,16 @@ const IconDiv = styled.div`
   margin-left: ${({ ml }) => ml};
   height: ${({ height }) => height};
   width: ${({ width }) => width};
+  flex-grow: ${({ fg }) => fg};
   background: yellow;
+  display: ${({ d }) => d};
 `;
 
 const IconImg = styled.img`
   object-fit: contain;
   height: ${({ height }) => height};
   width: ${({ width }) => width};
+  flex-grow: ${({ fg }) => fg};
 `;
 
 function Icon({ src, alt, mr, ml, children, height, width }) {

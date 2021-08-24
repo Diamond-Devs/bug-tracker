@@ -12,6 +12,11 @@ const RegularTextContent = styled.p`
     ts &&
     css`
       text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
+    `};
+
+  ${({ size }) =>
+    css`
+      font-size: ${size[1]};
     `}
 `;
 
