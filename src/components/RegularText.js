@@ -14,10 +14,26 @@ const RegularTextContent = styled.p`
       text-shadow: 0px 8px 4px rgba(0, 0, 0, 0.25);
     `};
 
-  ${({ size }) =>
-    css`
-      font-size: ${size[1]};
-    `}
+  ${({ size }) => {
+    if (!Array.isArray(size)) return;
+    const startingPx = 300;
+    const responsiveFs = size?.map((value, index) => {
+      if (index == 0)
+        return css`
+          font-size: ${size[index]};
+        `;
+      const multiplied = startingPx * (index + 1);
+
+      if (multiplied > 600) {
+        return css`
+          @media (min-width: ${multiplied}px) {
+            font-size: ${size[index]};
+          }
+        `;
+      }
+    });
+    return responsiveFs;
+  }}
 `;
 
 function RegularText({ size, children, mb, ds, ts, ml }) {

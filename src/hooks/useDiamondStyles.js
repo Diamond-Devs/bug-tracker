@@ -27,11 +27,21 @@ export const useDiamondStyles = (props) => {
     }
     if (Array.isArray(props[attribute])) {
       const append = appendVhorVw(attribute);
-      props[attribute][0].map((value, index, array) => {
-        const factor = props[attribute][1];
-        array[index] = value * factor + append;
-      });
-      props[attribute] = props[attribute][0];
+      const sizes = props[attribute][0];
+      const multiplier = props[attribute][1];
+      const sizesAdded = props[attribute][2] || 0;
+      for (let i = 0; i < sizesAdded; i++) {
+        console.log(sizes[0]);
+        sizes.push(sizes[0] * multiplier * (i + 1) + append);
+        console.log(sizes[i]);
+        console.log(sizes);
+      }
+      // props[attribute][0].map((value, index, array) => {
+      //   const factor = props[attribute][1];
+      //   array[index] = value * factor + append;
+      // });
+      sizes[0] += append;
+      props[attribute] = sizes;
       console.log(props[attribute]);
     }
   }

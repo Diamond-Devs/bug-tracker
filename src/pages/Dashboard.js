@@ -85,9 +85,7 @@ function Dashboard() {
           <RegularText
             {...useDiamondStyles({
               ml: 3.68,
-              size: [[20, 2], 3],
-              fs: 3,
-              d: "flex",
+              size: [[4.44], 0.4, 2],
             })}
           >
             Dashboard Home
@@ -101,7 +99,7 @@ function Dashboard() {
             alt="home icon"
             {...useDiamondStyles({ ml: 6.28 })}
           ></Icon>
-          <RegularText {...useDiamondStyles({ ml: 3.68, size: "5em" })}>
+          <RegularText {...useDiamondStyles({ ml: 3.68, size: "2em" })}>
             Dashboard Home
           </RegularText>
         </MenuRow>
