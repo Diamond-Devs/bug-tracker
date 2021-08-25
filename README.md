@@ -51,10 +51,12 @@ WHAT WE AIM TO ACCOMPLISH:
 
 DEVELOPMENT UPDATES:
 
+<b>MININUM Dashboard Page UI (70% completed)</b>
+
+https://user-images.githubusercontent.com/76098411/130843751-cc39f1e0-e907-42dc-987f-10fcbc48d58d.mp4
+
+
 <b>MINIMUM Login/Signup Page UI (95% completed)</b>
 
 ![lLIG1ttZaF](https://user-images.githubusercontent.com/76098411/129896031-9f36a886-2aff-4562-b066-e12587a990ae.gif)
 
-<b>MININUM Dashboard Page UI (40% completed)</b>
-
-![mR3wLUtVYL](https://user-images.githubusercontent.com/76098411/130232738-c9509f61-7d4e-4ca0-add9-5b48e775910a.gif)
