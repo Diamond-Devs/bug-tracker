@@ -6,48 +6,22 @@ import Hamburger from "../assets/HamburgerIcon.png";
 import User from "../assets/UserIcon.png";
 import Pencil from "../assets/PencilIcon.png";
 import XButton from "../assets/XButton.png";
+import Ticket from "../assets/TicketIcon.png";
+import Project from "../assets/ProjectIcon.png";
+
 import Home from "../assets/HomeIcon.png";
-import { CommonContainer } from "../styled/commonStyles";
-import { Image } from "../styled/commonStyles";
+import {
+  CommonContainer,
+  Input,
+  Text,
+  mainWhite,
+} from "../styled/commonStyles";
 
 //Components
 import Navbar from "../components/Navbar";
+import SearchBar from "../components/SearchBar";
 import Icon from "../components/Icon";
-
-const DashboardDiv = styled.div`
-  display: grid;
-  width: 100vw;
-  height: 100vh;
-
-  justify-content: center;
-  grid-template-areas:
-    "nav"
-    "body";
-  grid-template-rows: 10vh auto;
-`;
-
-// const MenuRowIcon = styled.img`
-//   margin-left: 6.28vw;
-//   @media (min-width: 427px) {
-//     width: 44px;
-//     height: 44px;
-//   }
-//   @media (min-width: 579px) {
-//     width: 52px;
-//     height: 52px;
-//   }
-//   @media (min-width: 807px) {
-//     width: 56px;
-//     height: 56px;
-//   }
-//   @media (min-width: 962px) {
-//     width: 64px;
-//     height: 64px;
-//   }
-//   @media (min-width: 1100px) {
-//     display: none;
-//   }
-// `;
+import Toggle from "../components/Toggle";
 
 function Dashboard() {
   const [toggled, setToggled] = useState(false);
@@ -55,15 +29,82 @@ function Dashboard() {
   return (
     <CommonContainer
       d="grid"
-      bc="yellow"
-      width="100vw"
+      fd="column"
       height="100vh"
-      gta={"nav" + "body"}
+      bc={mainWhite}
+      gta={`
+      "nav"
+      "body"
+      `}
+      gtr={`auto 100%`}
     >
       <Navbar area="nav" d="flex" jc="space-evenly">
-        <Icon width="40px" height="40px" src={Pencil}></Icon>
-        <Icon width="40px" height="40px" src={Pencil}></Icon>
+        <Icon width="10vw" height="36px" src={Pencil}></Icon>
+        <SearchBar />
+        <Icon width="10vw" height="36px" src={User}></Icon>
+        <Toggle
+          show={<Icon width="10vw" height="36px" src={Hamburger} />}
+          hide={<Icon width="10vw" height="36px" src={XButton} />}
+          toggled={toggled}
+          setToggled={setToggled}
+        />
       </Navbar>
+      {toggled && (
+        <CommonContainer
+          width="100vw"
+          height="73px"
+          area="body"
+          d="flex"
+          fd="column"
+          mt="0.24vw"
+        >
+          <CommonContainer d="flex" fd="row" mt="5vw">
+            <Icon ml="8vw" width="10vw" mw={"36px"} height="36px" src={Home} />
+            <CommonContainer ml={"13px"} d="flex" ai="center">
+              <Text>Dashboard Home</Text>
+            </CommonContainer>
+          </CommonContainer>
+          <CommonContainer d="flex" fd="row" mt="5vw">
+            <Icon ml="8vw" width="10vw" mw={"36px"} height="36px" src={User} />
+            <CommonContainer ml={"13px"} d="flex" ai="center">
+              <Text>My Profile</Text>
+            </CommonContainer>
+          </CommonContainer>
+          <CommonContainer d="flex" fd="row" mt="5vw">
+            <Icon
+              ml="8vw"
+              width="10vw"
+              mw={"36px"}
+              height="36px"
+              src={Ticket}
+            />
+            <CommonContainer ml={"13px"} d="flex" ai="center">
+              <Text>My Tickets</Text>
+            </CommonContainer>
+          </CommonContainer>
+          <CommonContainer d="flex" fd="row" mt="5vw">
+            <Icon
+              ml="8vw"
+              width="10vw"
+              mw={"36px"}
+              height="36px"
+              src={Project}
+            />
+            <CommonContainer ml={"13px"} d="flex" ai="center">
+              <Text>My Projects</Text>
+            </CommonContainer>
+          </CommonContainer>
+          <CommonContainer d="flex" fd="row" mt="5vw">
+            <Icon ml="8vw" width="10vw" mw={"36px"} height="36px" src={User} />
+            <CommonContainer ml={"13px"} d="flex" ai="center">
+              <Text>Manage Users as Admin</Text>
+            </CommonContainer>
+          </CommonContainer>
+        </CommonContainer>
+      )}
+      {/* <CommonContainer area="body" bc="pink">
+        ddsads
+      </CommonContainer> */}
     </CommonContainer>
   );
 }

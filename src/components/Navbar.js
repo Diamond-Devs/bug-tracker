@@ -1,17 +1,15 @@
 import React from "react";
 import { CommonContainer } from "../styled/commonStyles";
 
-function Navbar({ children, d, jc }) {
+function Navbar({ children, d, jc, nav }) {
   return (
     <CommonContainer
       d={d}
       jc={jc}
-      area="nav"
-      bc="red"
+      area={nav}
       ai="center"
       height="9.36vh"
-      width="inherit"
-      align-items="center"
+      width="100vw"
     >
       {children}
     </CommonContainer>

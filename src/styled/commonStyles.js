@@ -1,19 +1,31 @@
 import styled, { css } from "styled-components";
 
+export const mainColor = "#454E9E";
+export const mainWhite = "#fffdfd";
+export const mainFont = "Gothic A1', sans-serif";
+export const greenColor = "#00A321";
+
 export const CommonContainer = styled.div`
   display: ${({ d }) => d};
   align-items: ${({ ai }) => ai};
   justify-content: ${({ jc }) => jc};
+  flex-direction: ${({ fd }) => fd};
   grid-area: ${({ area }) => area};
   grid-template-areas: ${({ gta }) => gta};
+  grid-template-rows: ${({ gtr }) => gtr};
+  top: ${({ t }) => t};
   background-color: ${({ bc }) => bc};
   margin-bottom: ${({ mb }) => mb};
+  margin-left: ${({ ml }) => ml};
+  margin-right: ${({ mr }) => mr};
+  margin-top: ${({ mt }) => mt};
   filter: ${({ ds }) => ds};
+  border: ${({ b }) => b};
   border-radius: ${({ br }) => br};
   width: ${({ width }) => width};
+  max-width: ${({ mw }) => mw};
   height: ${({ height }) => height};
-  max-width: 100%;
-  display: flex;
+
   ${({ invert }) =>
     invert &&
     css`
@@ -26,8 +38,21 @@ export const Image = styled.img`
   object-fit: contain;
   height: ${({ height }) => height};
   width: ${({ width }) => width};
+  max-width: ${({ mw }) => mw};
 `;
 
-export const mainColor = "#454E9E";
-export const mainFont = "Gothic A1', sans-serif";
-export const greenColor = "#00A321";
+export const Input = styled.input`
+  height: ${({ height }) => height};
+  width: ${({ width }) => width};
+  max-width: ${({ mw }) => mw};
+  padding: ${({ pd }) => pd};
+  outline: none;
+  border: none;
+  color: ${mainColor};
+  color: ${({ color }) => color};
+`;
+
+export const Text = styled.p`
+  font-size: ${({ fs }) => fs};
+  font-weight: ${({ fw }) => fw};
+`;
