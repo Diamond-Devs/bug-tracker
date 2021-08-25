@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { generateResponsiveness } from "../js/generateResponsiveness";
 
 const MenuRowContainer = styled.div`
   display: flex;
@@ -8,6 +9,7 @@ const MenuRowContainer = styled.div`
   height: ${({ height }) => height};
   margin-left: ${({ ml }) => ml};
   margin-top: ${({ mt }) => mt};
+  margin-top: ${({ mt }) => generateResponsiveness(mt, "margin-top", 100, 300)};
 `;
 
 function MenuRow({ height, width, ml, mt, children }) {

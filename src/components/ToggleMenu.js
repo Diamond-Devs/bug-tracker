@@ -11,8 +11,7 @@ const ToggleMenuDiv = styled.div`
   }
 `;
 
-function ToggleMenu({ hide, show, mr }) {
-  const [toggled, setToggled] = useState(false);
+function ToggleMenu({ hide, show, toggled, setToggled, mr }) {
   return (
     <ToggleMenuDiv onClick={() => setToggled(!toggled)} mr={mr}>
       {toggled ? (

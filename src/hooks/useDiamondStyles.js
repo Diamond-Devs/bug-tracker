@@ -45,7 +45,7 @@ export const useDiamondStyles = (props) => {
       console.log(props[attribute]);
     }
   }
-  // console.log(props);
+  //console.log(props[attribute]);
   const bind = {
     ...props,
   };

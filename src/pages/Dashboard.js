@@ -55,6 +55,23 @@ const DashboardDiv = styled.div`
 // `;
 
 function Dashboard() {
+  const [toggled, setToggled] = useState(false);
+  const rowStyle = useDiamondStyles({
+    height: 12.86,
+    width: 100,
+    mt: [[40], 0.005, 10],
+  });
+  const iconStyle = useDiamondStyles({
+    ml: 6.28,
+    fg: 1,
+    d: "flex",
+    height: [[40], 0.016, 10],
+  });
+  const textStyle = useDiamondStyles({
+    ml: 3.68,
+    size: [[5.44], 0.12, 4],
+  });
+
   return (
     <DashboardDiv>
       <Navbar
@@ -67,43 +84,38 @@ function Dashboard() {
             <Bubble></Bubble>
           </Icon>,
           <ToggleMenu
+            toggled={toggled}
+            setToggled={setToggled}
             show={[Hamburger, "hamburger icon"]}
             hide={[XButton, "x button icon"]}
             // ml={3}
           />,
         ]}
       />
-      <Screen area="body">
-        <MenuRow
-          {...useDiamondStyles({ height: 12.86, width: 100, mt: "10px" })}
-        >
-          <Icon
-            src={Home}
-            alt="home icon"
-            {...useDiamondStyles({ ml: 6.28, fg: 1, d: "flex" })}
-          ></Icon>
-          <RegularText
-            {...useDiamondStyles({
-              ml: 3.68,
-              size: [[4.44], 0.4, 2],
-            })}
-          >
-            Dashboard Home
-          </RegularText>
-        </MenuRow>
-        <MenuRow
-          {...useDiamondStyles({ height: 12.86, width: 100, mt: "8px" })}
-        >
-          <Icon
-            src={Home}
-            alt="home icon"
-            {...useDiamondStyles({ ml: 6.28 })}
-          ></Icon>
-          <RegularText {...useDiamondStyles({ ml: 3.68, size: "2em" })}>
-            Dashboard Home
-          </RegularText>
-        </MenuRow>
-      </Screen>
+      {toggled && (
+        <Screen area="body">
+          <MenuRow {...rowStyle}>
+            <Icon src={Home} alt="home icon" {...iconStyle}></Icon>
+            <RegularText {...textStyle}>Dashboard Home</RegularText>
+          </MenuRow>
+          <MenuRow {...rowStyle}>
+            <Icon src={User} alt="home icon" {...iconStyle}></Icon>
+            <RegularText {...textStyle}>My Profile</RegularText>
+          </MenuRow>
+          <MenuRow {...rowStyle}>
+            <Icon src={Home} alt="home icon" {...iconStyle}></Icon>
+            <RegularText {...textStyle}>Dashboard Home</RegularText>
+          </MenuRow>
+          <MenuRow {...rowStyle}>
+            <Icon src={Home} alt="home icon" {...iconStyle}></Icon>
+            <RegularText {...textStyle}>Dashboard Home</RegularText>
+          </MenuRow>
+          <MenuRow {...rowStyle}>
+            <Icon src={Home} alt="home icon" {...iconStyle}></Icon>
+            <RegularText {...textStyle}>Dashboard Home</RegularText>
+          </MenuRow>
+        </Screen>
+      )}
     </DashboardDiv>
   );
 }
