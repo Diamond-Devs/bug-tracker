@@ -53,8 +53,7 @@ DEVELOPMENT UPDATES:
 
 <b>MININUM Dashboard Page UI (70% completed)</b>
 
-https://user-images.githubusercontent.com/76098411/130843751-cc39f1e0-e907-42dc-987f-10fcbc48d58d.mp4
-
+![0M5Zm9gDoU](https://user-images.githubusercontent.com/76098411/130844108-6c3b380f-7e97-446a-95ab-cbc303201b53.gif)
 
 <b>MINIMUM Login/Signup Page UI (95% completed)</b>
 
