@@ -1,7 +1,12 @@
 import styled, { css } from "styled-components";
 
 export const CommonContainer = styled.div`
-  display:${({ d }) => d}
+  display: ${({ d }) => d};
+  align-items: ${({ ai }) => ai};
+  justify-content: ${({ jc }) => jc};
+  grid-area: ${({ area }) => area};
+  grid-template-areas: ${({ gta }) => gta};
+  background-color: ${({ bc }) => bc};
   margin-bottom: ${({ mb }) => mb};
   filter: ${({ ds }) => ds};
   border-radius: ${({ br }) => br};
@@ -15,6 +20,12 @@ export const CommonContainer = styled.div`
       background: #454e9e;
       color: #fffdfd;
     `}
+`;
+
+export const Image = styled.img`
+  object-fit: contain;
+  height: ${({ height }) => height};
+  width: ${({ width }) => width};
 `;
 
 export const mainColor = "#454E9E";

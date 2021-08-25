@@ -1,23 +1,20 @@
 import React from "react";
-import styled from "styled-components";
+import { CommonContainer } from "../styled/commonStyles";
 
-const NavbarDiv = styled.div`
-  grid-area: ${({ area }) => area};
-  display: flex;
-  align-items: center;
-  background: #fffdfd;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: ${({ width }) => width};
-  height: 9.4vh;
-  justify-content: space-around;
-  margin-left: ${({ ml }) => ml};
-`;
-
-function Navbar({ icons, area, width, ml }) {
+function Navbar({ children, d, jc }) {
   return (
-    <NavbarDiv area={area} width={width} ml={ml}>
-      {icons.map((icon) => icon)}
-    </NavbarDiv>
+    <CommonContainer
+      d={d}
+      jc={jc}
+      area="nav"
+      bc="red"
+      ai="center"
+      height="9.36vh"
+      width="inherit"
+      align-items="center"
+    >
+      {children}
+    </CommonContainer>
   );
 }
 
