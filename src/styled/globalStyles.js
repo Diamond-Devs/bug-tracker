@@ -6,6 +6,8 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
 }
 
+
+
 body {
     font-family: 'Gothic A1', sans-serif;
     background:#FFFDFD;

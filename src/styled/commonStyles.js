@@ -22,9 +22,16 @@ export const CommonContainer = styled.div`
   filter: ${({ ds }) => ds};
   border: ${({ b }) => b};
   border-radius: ${({ br }) => br};
+  box-shadow: ${({ bs }) => bs};
   width: ${({ width }) => width};
   max-width: ${({ mw }) => mw};
   height: ${({ height }) => height};
+  max-height: ${({ mh }) => mh};
+  z-index: ${({ z }) => z};
+  overflow-x: ${({ ox }) => ox};
+  padding: ${({ p }) => p};
+  padding-top: ${({ pt }) => pt};
+  padding-bottom: ${({ pb }) => pb};
 
   ${({ invert }) =>
     invert &&

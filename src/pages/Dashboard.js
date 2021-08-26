@@ -8,8 +8,9 @@ import Pencil from "../assets/PencilIcon.png";
 import XButton from "../assets/XButton.png";
 import Ticket from "../assets/TicketIcon.png";
 import Project from "../assets/ProjectIcon.png";
-
+import Logo from "../assets/Logo.png";
 import Home from "../assets/HomeIcon.png";
+
 import {
   CommonContainer,
   Input,
@@ -22,6 +23,29 @@ import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 import Icon from "../components/Icon";
 import Toggle from "../components/Toggle";
+import SideMenu from "../components/SideMenu";
+import Row from "../components/Row";
+import TicketRow from "../components/TicketRow";
+
+const TicketFeed = styled(CommonContainer)`
+  @media (min-width: 550px) {
+    margin-left: 4vw;
+  }
+  @media (min-width: 850px) {
+    margin-top: 2vw;
+    margin-left: 8vw;
+  }
+  @media (min-width: 1200px) {
+    margin-top: 4vw;
+    margin-left: 16vw;
+  }
+`;
+
+const TicketFeedTitle = styled(Text)`
+  @media (min-width: 768px) {
+    font-size: 28px;
+  }
+`;
 
 function Dashboard() {
   const [toggled, setToggled] = useState(false);
@@ -33,12 +57,18 @@ function Dashboard() {
       height="100vh"
       bc={mainWhite}
       gta={`
-      "nav"
+      "nav" 
       "body"
       `}
       gtr={`auto 100%`}
+      ox="hidden"
     >
-      <Navbar area="nav" d="flex" jc="space-evenly">
+      <Navbar
+        area="nav"
+        d="flex"
+        jc="space-evenly"
+        bs="0px 4px 4px rgba(0, 0, 0, 0.25);"
+      >
         <Icon width="10vw" height="36px" src={Pencil}></Icon>
         <SearchBar />
         <Icon width="10vw" height="36px" src={User}></Icon>
@@ -50,61 +80,36 @@ function Dashboard() {
         />
       </Navbar>
       {toggled && (
-        <CommonContainer
-          width="100vw"
-          height="73px"
-          area="body"
-          d="flex"
-          fd="column"
-          mt="0.24vw"
-        >
-          <CommonContainer d="flex" fd="row" mt="5vw">
-            <Icon ml="8vw" width="10vw" mw={"36px"} height="36px" src={Home} />
-            <CommonContainer ml={"13px"} d="flex" ai="center">
-              <Text>Dashboard Home</Text>
-            </CommonContainer>
-          </CommonContainer>
-          <CommonContainer d="flex" fd="row" mt="5vw">
-            <Icon ml="8vw" width="10vw" mw={"36px"} height="36px" src={User} />
-            <CommonContainer ml={"13px"} d="flex" ai="center">
-              <Text>My Profile</Text>
-            </CommonContainer>
-          </CommonContainer>
-          <CommonContainer d="flex" fd="row" mt="5vw">
-            <Icon
-              ml="8vw"
-              width="10vw"
-              mw={"36px"}
-              height="36px"
-              src={Ticket}
-            />
-            <CommonContainer ml={"13px"} d="flex" ai="center">
-              <Text>My Tickets</Text>
-            </CommonContainer>
-          </CommonContainer>
-          <CommonContainer d="flex" fd="row" mt="5vw">
-            <Icon
-              ml="8vw"
-              width="10vw"
-              mw={"36px"}
-              height="36px"
-              src={Project}
-            />
-            <CommonContainer ml={"13px"} d="flex" ai="center">
-              <Text>My Projects</Text>
-            </CommonContainer>
-          </CommonContainer>
-          <CommonContainer d="flex" fd="row" mt="5vw">
-            <Icon ml="8vw" width="10vw" mw={"36px"} height="36px" src={User} />
-            <CommonContainer ml={"13px"} d="flex" ai="center">
-              <Text>Manage Users as Admin</Text>
-            </CommonContainer>
-          </CommonContainer>
-        </CommonContainer>
+        <SideMenu>
+          <Row src={Home} text="Dashboard Home"></Row>
+          <Row src={User} text="My Profile"></Row>
+          <Row src={Ticket} text="My Tickets"></Row>
+          <Row src={Project} text="My Projects"></Row>
+          <Row src={Logo} text="Manage Users as Admin"></Row>
+        </SideMenu>
       )}
-      {/* <CommonContainer area="body" bc="pink">
-        ddsads
-      </CommonContainer> */}
+      <TicketFeed area="body" p="16px" pt="20px">
+        <CommonContainer height="48px" d="flex" ai="center">
+          <TicketFeedTitle fw="600" fs="16px">
+            My Ticket Feed
+          </TicketFeedTitle>
+        </CommonContainer>
+        <CommonContainer
+          d="flex"
+          height="auto"
+          width="98.46%"
+          fd="column"
+          pb="64px"
+        >
+          <TicketRow />
+          <TicketRow />
+          <TicketRow />
+          <TicketRow />
+          <TicketRow />
+          <TicketRow />
+          <TicketRow />
+        </CommonContainer>
+      </TicketFeed>
     </CommonContainer>
   );
 }
