@@ -32,11 +32,6 @@ TESTING
 
 -Enzyme
 
-
-# What we've done so far (VISUALIZATION)
-
-This is a new project, but we are progressing relatively quickly. The login page and sign-up pages are 98% finished. Next is the dashboard.
-
 WHAT WE AIM TO ACCOMPLISH:
 
 -Dashboard, Authentication, Ticket System
@@ -49,11 +44,14 @@ WHAT WE AIM TO ACCOMPLISH:
 
 -A new UI Library (I want to make a small UI library for Diamond Devs to use in the future)
 
-DEVELOPMENT UPDATES:
+
+# What we've done so far  (DEVELOPMENT UPDATES)
+
+(VISUALIZATION)
 
 <b>MININUM Dashboard Page UI (70% completed)</b>
 
-![0M5Zm9gDoU](https://user-images.githubusercontent.com/76098411/130844108-6c3b380f-7e97-446a-95ab-cbc303201b53.gif)
+![dNe6XQIpZp](https://user-images.githubusercontent.com/76098411/130993605-e5cb8b01-09e6-4415-88ed-e64d096315b5.gif)
 
 <b>MINIMUM Login/Signup Page UI (95% completed)</b>
 
