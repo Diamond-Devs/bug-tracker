@@ -5,6 +5,7 @@ import RegularText from "../components/RegularText";
 import RegularInput from "../components/RegularInput";
 import Button from "../components/Button";
 import { useDiamondStyles } from "../hooks/useDiamondStyles";
+import { useHistory } from "react-router-dom";
 
 const LoginView = styled.div`
   display: flex;
@@ -25,6 +26,7 @@ const LoginOrSignUp = styled.div`
 `;
 
 function Login({ addStyles }) {
+  const history = useHistory();
   const [isSignUp, setIsSignUp] = useState(false);
   const titleStyle = useDiamondStyles({
     size: "1.75em",
@@ -58,7 +60,11 @@ function Login({ addStyles }) {
             </RegularText>
             <RegularInput {...defaultStyle} placeholder="Username" />
             <RegularInput {...defaultStyle} placeholder="Password" />
-            <Button {...defaultStyle} invert>
+            <Button
+              {...defaultStyle}
+              invert
+              onClick={() => history.push("/dashboard")}
+            >
               Log In
             </Button>
             <Button {...defaultStyle} onClick={() => setIsSignUp(true)}>

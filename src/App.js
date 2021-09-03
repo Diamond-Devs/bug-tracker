@@ -1,5 +1,6 @@
 import React from "react";
 import Login from "./pages/Login";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import styled from "styled-components";
 import Dashboard from "./pages/Dashboard";
 
@@ -12,10 +13,20 @@ const AppView = styled.div``;
 function App() {
   return (
     <AppView>
-      <Dashboard />
-      {/* <Login
-        addStyles={{ mb: bottomMargin, ds: dropShadow, br: inputBorderRadius }}
-      /> */}
+      <Router>
+        <Route exact path="/">
+          <Login
+            addStyles={{
+              mb: bottomMargin,
+              ds: dropShadow,
+              br: inputBorderRadius,
+            }}
+          />
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard />
+        </Route>
+      </Router>
     </AppView>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 //Assets
 import Hamburger from "../assets/HamburgerIcon.png";
@@ -10,13 +11,9 @@ import Ticket from "../assets/TicketIcon.png";
 import Project from "../assets/ProjectIcon.png";
 import Logo from "../assets/Logo.png";
 import Home from "../assets/HomeIcon.png";
+import LogOut from "../assets/LogOutIcon.png";
 
-import {
-  CommonContainer,
-  Input,
-  Text,
-  mainWhite,
-} from "../styled/commonStyles";
+import { CommonContainer, Text, mainWhite } from "../styled/commonStyles";
 
 //Components
 import Navbar from "../components/Navbar";
@@ -48,6 +45,7 @@ const TicketFeedTitle = styled(Text)`
 `;
 
 function Dashboard() {
+  const history = useHistory();
   const [toggled, setToggled] = useState(false);
 
   return (
@@ -86,6 +84,11 @@ function Dashboard() {
           <Row src={Ticket} text="My Tickets"></Row>
           <Row src={Project} text="My Projects"></Row>
           <Row src={Logo} text="Manage Users as Admin"></Row>
+          <Row
+            src={LogOut}
+            text="Log Out"
+            onClick={() => history.push("/")}
+          ></Row>
         </SideMenu>
       )}
       <TicketFeed area="body" p="16px" pt="20px">

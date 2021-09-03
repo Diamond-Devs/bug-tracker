@@ -5,7 +5,7 @@ function SideMenu({ children }) {
   return (
     <CommonContainer
       width="100vw"
-      height="84vh"
+      height="100%"
       area="body"
       d="flex"
       fd="column"
