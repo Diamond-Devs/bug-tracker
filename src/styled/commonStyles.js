@@ -39,6 +39,26 @@ export const CommonContainer = styled.div`
       background: #454e9e;
       color: #fffdfd;
     `}
+  ${({ cursorP, invert }) => {
+    if (cursorP && invert) {
+      return css`
+        background: #fffdfd;
+        color: #454e9e;
+        :hover {
+          cursor: pointer;
+          background: #454e9e;
+          color: #fffdfd;
+        }
+      `;
+    }
+    if (cursorP) {
+      return css`
+        :hover {
+          cursor: pointer;
+        }
+      `;
+    }
+  }}
 `;
 
 export const Image = styled.img`

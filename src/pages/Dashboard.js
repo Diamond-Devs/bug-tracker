@@ -79,15 +79,17 @@ function Dashboard() {
       </Navbar>
       {toggled && (
         <SideMenu>
-          <Row src={Home} text="Dashboard Home"></Row>
-          <Row src={User} text="My Profile"></Row>
-          <Row src={Ticket} text="My Tickets"></Row>
-          <Row src={Project} text="My Projects"></Row>
-          <Row src={Logo} text="Manage Users as Admin"></Row>
+          <Row src={Home} text="Dashboard Home" cursorP invert></Row>
+
+          <Row src={Ticket} text="My Tickets" cursorP invert></Row>
+          <Row src={Project} text="My Projects" cursorP invert></Row>
+          <Row src={Logo} text="Manage Users as Admin" cursorP invert></Row>
           <Row
             src={LogOut}
             text="Log Out"
             onClick={() => history.push("/")}
+            cursorP
+            invert
           ></Row>
         </SideMenu>
       )}
