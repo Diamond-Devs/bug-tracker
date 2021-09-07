@@ -1,5 +1,5 @@
 {
-  "name": "bug-tracker",
+  "name": "bug-tracker-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
