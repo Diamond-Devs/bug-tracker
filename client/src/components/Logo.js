@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/Logo.png";
+import logo from "../assets/Logo.webp";
 import { CommonContainer } from "../styled/commonStyles";
 
 const LogoImage = styled.img`
