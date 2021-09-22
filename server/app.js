@@ -3,6 +3,11 @@ var app = express();
 var mysql = require('mysql2');
 var JSON = require('JSON');
 var cors = require('cors');
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config({ path: __dirname + '/.env' });
+}
+console.log("Process started at: " + new Date());
+console.log("If anything shows up after this, the .env file has been loaded properly: " + process.env.corsdomain1);
 
 app.set('view engine', 'html');
 app.use(express.json()); //Used to parse JSON bodies
