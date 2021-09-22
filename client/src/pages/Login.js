@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Logo from "../components/Logo";
+import axios from "axios";
 import RegularText from "../components/RegularText";
 import RegularInput from "../components/RegularInput";
 import Button from "../components/Button";
@@ -28,6 +29,8 @@ const LoginOrSignUp = styled.div`
 function Login({ addStyles }) {
   const history = useHistory();
   const [isSignUp, setIsSignUp] = useState(false);
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
   const titleStyle = useDiamondStyles({
     size: "1.75em",
     mb: addStyles.mb,
@@ -49,6 +52,14 @@ function Login({ addStyles }) {
     height: 26.6,
   });
 
+  const requestAuthentication = async () => {
+    axios.post(
+      "https://port-3001-always-on-rileydlynch669555.codeanyapp.com/login-route",
+      { name, password }
+    );
+    // history.push("/dashboard")
+  };
+
   return (
     <LoginView>
       <LoginOrSignUp>
@@ -58,12 +69,30 @@ function Login({ addStyles }) {
             <RegularText {...titleStyle}>
               Diamond Delivery Issue Tracker
             </RegularText>
-            <RegularInput {...defaultStyle} placeholder="Username" />
-            <RegularInput {...defaultStyle} placeholder="Password" />
+            <RegularInput
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+                console.log(name);
+              }}
+              {...defaultStyle}
+              placeholder="Username"
+            />
+            <RegularInput
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                console.log(password);
+              }}
+              {...defaultStyle}
+              placeholder="Password"
+            />
             <Button
               {...defaultStyle}
               invert
-              onClick={() => history.push("/dashboard")}
+              onClick={() => {
+                requestAuthentication();
+              }}
             >
               Log In
             </Button>

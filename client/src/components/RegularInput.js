@@ -30,10 +30,16 @@ const DiamondInput = styled.input`
   }
 `;
 
-function RegularInput({ mb, br, ds, placeholder }) {
+function RegularInput({ mb, br, ds, placeholder, value, onChange }) {
   return (
     <CommonContainer mb={mb} ds={ds} mb={mb}>
-      <DiamondInput br={br} type="text" placeholder={placeholder} />
+      <DiamondInput
+        br={br}
+        type="text"
+        placeholder={placeholder}
+        onChange={onChange}
+        value={value}
+      />
     </CommonContainer>
   );
 }
