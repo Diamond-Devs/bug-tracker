@@ -53,10 +53,15 @@ function Login({ addStyles }) {
   });
 
   const requestAuthentication = async () => {
-    axios.post(
-      "https://port-3001-always-on-rileydlynch669555.codeanyapp.com/login-route",
-      { name, password }
-    );
+    try {
+      const response = await axios.post(
+        "https://port-3001-always-on-rileydlynch669555.codeanyapp.com/login-route",
+        { name, password }
+      );
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
     // history.push("/dashboard")
   };
 
