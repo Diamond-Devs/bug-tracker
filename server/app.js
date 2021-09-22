@@ -16,10 +16,10 @@ var connection = mysql.createConnection({ //This command is used to log into the
 });
 
 app.use(function(req, res, next) {//This section allows specified foreign domains to access this node app
-    console.log(req.headers.origin);
+    console.log(`Domain origin of current request is: ${req.headers.origin}`);
     const corsWhitelist = [//This identifies the exclusive domains allowed to access this app
-        'https://exampledomain1.codeanyapp.com',
-        'https://exampledomain2.codeanyapp.com'
+        'https://exampledomain1.com',
+        'https://exampledomain2.com'
     ];
     //The below if statement sets CORS to allow many types of requests to be made to this app
     if (corsWhitelist.find(origin => origin == String(req.headers.origin))) {
