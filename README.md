@@ -38,12 +38,6 @@ WHAT WE AIM TO ACCOMPLISH:
 
 -CRUD features typical for an enterprise bug tracker application
 
--To teach and observe each other's strengths (we are both good at the other's weakness)
-
--Beautiful animations
-
--A new UI Library (I want to make a small UI library for Diamond Devs to use in the future)
-
 
 # What we've done so far  (DEVELOPMENT UPDATES)
 
