@@ -43,7 +43,7 @@ app.use(function(req, res, next) {//This section allows specified foreign domain
     next();
 });
 
-app.post("/login-route", async function(req,res) {
+app.post("/login-route", function(req,res) {
     console.log(req.body)
 	const Postres = res;
     const Postreq = req;
@@ -78,6 +78,22 @@ app.post("/login-route", async function(req,res) {
 			  }
 		});
 	});
+});
+
+app.post('/register', async function(req,res){
+    hashedPassword = await bcrypt.hash(req.body.password, 10) // await hashed password
+    Postres = res;
+	// in the below SQL statement, use the hashed Password
+    var sqlstatement = "INSERT INTO users(first_name, last_name, username, password, email) VALUES('" + req.body.firstname + "', '" + req.body.lastname + "', '" + req.body.username + "', '" + hashedPassword + "', '" + req.body.email + "')"
+    connection.query(sqlstatement, function(err, result) {
+        if(result){
+            Postres.json({registrationsuccess: true}); //Boolean sent to trigger next step on client end
+            Postres.cookie('userprofile', Postreq.body.username);
+        }
+        if(err)
+            console.log("The error, if any, is: " + err);
+            Postres.json({registrationsuccess: false});//Boolean sent to trigger end-user to fix user errors in registration data
+        });
 });
 
 const port = 3001;
