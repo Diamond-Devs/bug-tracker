@@ -61,8 +61,7 @@ app.post("/login-route", async function(req,res) {
 		bcrypt.compare(Postreq.body.password, ExistPW, function(err, res) { //This function takes in the raw password (DO NO HASH IT), hashes it, then compares vs the database's hashed version of the password. DO NOT HASH THE PASSWORD BEFORE PASSING IT TO THE .compare METHOD!!
 			if (err){
                 console.log(err);
-                    returndata.usernamepass = false;
-                    returndata.passwordpass = false;
+                    returndata.loginerror = true;
                     Postres.json(returndata);
 			  }
 			if (res){
