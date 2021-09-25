@@ -1,6 +1,6 @@
 # Diamond Devs Bug Tracker
 
-This is a bug tracker for our web development collective, Diamond Devs.
+This is a bug tracker for a web development collective.
 
 TECHNOLOGIES USED:
 
@@ -32,22 +32,9 @@ TESTING
 
 -Enzyme
 
-WHAT WE AIM TO ACCOMPLISH:
+PROJECT SCOPE:
 
 -Dashboard, Authentication, Ticket System
 
 -CRUD features typical for an enterprise bug tracker application
-
-
-# What we've done so far  (DEVELOPMENT UPDATES)
-
-(VISUALIZATION)
-
-<b>MININUM Dashboard Page UI (70% completed)</b>
-
-![dNe6XQIpZp](https://user-images.githubusercontent.com/76098411/130993605-e5cb8b01-09e6-4415-88ed-e64d096315b5.gif)
-
-<b>MINIMUM Login/Signup Page UI (95% completed)</b>
-
-![lLIG1ttZaF](https://user-images.githubusercontent.com/76098411/129896031-9f36a886-2aff-4562-b066-e12587a990ae.gif)
 
